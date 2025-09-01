@@ -549,10 +549,11 @@
 
     if (currentPath === '/test') {
       history.replaceState({}, '', lastValid);
-      setTimeout(() => {
+      window.addEventListener("load", function(){setTimeout(() => {
         showPopup();
         history.pushState({}, '', '/test');
       }, 100);
+    });
     } else {
       localStorage.setItem('lastValidPath', currentPath);
       if (currentPath === '/test') {

@@ -66,10 +66,11 @@
       history.replaceState({}, '', '/');
 
       // Wait a tick and then show popup + set URL to /test
-      setTimeout(() => {
+      window.addEventListener("load", function(){setTimeout(() => {
         createPopup();
         history.pushState({}, '', '/test');
-      }, 10);
+      }, 0);
+    });
     }
   }
 
